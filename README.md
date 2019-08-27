@@ -1,4 +1,4 @@
-# SEI 41 Student Homework Repository
+# SEI 43 Student Homework Repository
 
 Welcome to the GA London SEI 41 student homework repository. This is the place we are going to monitor the completion of your homework.
 
