@@ -1,0 +1,181 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+* {
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+footer {
+  background-color: 
+}
+
+div.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 50px 10px 50px;
+}
+
+main div {
+  padding: 15px;
+}
+
+div.left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  flex: 1;
+}
+
+div.right div {
+  margin: 10px 0;
+  max-width: 340px;
+}
+
+div.signup {
+  border: #e6e6e6 solid 1px;
+  display: flex;
+  flex-direction: column;
+  color: #999;
+  flex-wrap: wrap;
+  background-color: #FFF;
+}
+
+.signup img {
+  align-self: center;
+}
+
+div.signup form:last-of-type label {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+div.signup form:last-of-type label input {
+  margin: 2px 25px
+}
+
+div.signup form:last-of-type label input[type="submit"] {
+  margin: 12px 25px;
+}
+
+div.login {
+  border: #e6e6e6 solid 1px;
+  background-color: #FFF;
+}
+
+div.downloadapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  padding: 10px 20px 10px 20px;
+}
+
+div.downloadapp p {
+  margin: 0;
+}
+
+div.app-image-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.app-image-wrapper img {
+  align-self: center;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+  padding: 5px 20px;
+  font-size: 15px;
+  border-radius: 3px;
+  text-align: start;
+  border: 1px #999 solid;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  background-color: #3897f0;
+  color: #FFF;
+  font-weight: 800;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+footer li a {
+  color: #003569;
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+footer ul li:last-of-type {
+  padding: 0 20px 0 0;
+  margin: 0 0 0 auto;
+  color: #999;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 840px) {
+
+  main {
+    flex-direction: column;
+    padding: 20px 20px 10px 20px;
+
+  }
+
+  div.left img {
+    display: none;
+  }
+
+  div.right div {
+    margin: 5px 0;
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  footer ul li:last-of-type {
+    margin: 0;
+}
