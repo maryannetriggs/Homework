@@ -1,0 +1,100 @@
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+  color:	#3F3925;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  padding: 15px 40px;
+}
+
+
+/* Header Styles */
+
+div.header-wrapper {
+display: flex;
+flex-direction: column;
+background-color:	#FED12E;
+padding: 0 40px;
+}
+
+div.header-wrapper h1 {
+  font-weight: 900;
+  font-size: 40px;
+}
+
+div.header-text-burger {
+  display: flex;
+  justify-content: space-between;
+}
+
+i.fas.fa-bars {
+  align-self: center;
+}
+
+div.header-line {
+  background-color: #808080;
+  height: 1px;
+}
+
+div.header-wrapper nav ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+div.header-wrapper nav ul li {
+  border-right: 1px solid #808080;
+  padding: 5px 8px;
+  font-size: 16px;
+}
+
+div.header-wrapper nav ul li:hover {
+  border-bottom: black 5px solid;
+}
+
+div.header-wrapper nav ul li:last-of-type {
+  border: none;
+}
+
+div.header-wrapper nav ul li a {
+  color:#303A44;
+}
+
+
+/* Top Stories Styles */
+
+div.top-story-text h2 {
+ font-size: 24px;
+ padding-bottom: 20px;
+}
+
+article img {
+  padding-bottom: 10px;
+}
+
+article h3 {
+  font-weight: 700;
+}
+
+/* Media Queries for Desktop */
+
+@media only screen and (min-width: 1024px) {
+
+  i.fas.fa-bars {
+    display: none;
+  }
+
+}
+
+
+/* Media Queries for Tablet and Mobile */
+
+@media only screen and (max-width: 1023px) {
+
+  div.header-line, div.header-wrapper nav ul {
+    display: none;
+  }
+
+}
