@@ -161,8 +161,6 @@ class Triangle extends Shape {
     return (this.width * this.height) / 2
   }
   getPerimeter() {
-    return Math.sqrt((this.width * this.width) + (this.height * this.height)) + this.height + this.width
+    return Math.sqrt(this.width) + Math.sqrt(this.height) + this.height + this.width
   }
 }
-
-// FORMULA BASED ON PYTHAGORUS FOR PERIMETER
