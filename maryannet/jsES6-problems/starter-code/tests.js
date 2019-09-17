@@ -109,7 +109,7 @@ describe('mergeUnique', () => {
   })
 })
 
-xdescribe('arrayToObjects', () => {
+describe('arrayToObjects', () => {
   it('should convert an array of strings to an array of objects', () => {
     expect(arrayToObjects(['Paris', 'New York'], 'city')[0]).to.be.an('object')
   })
@@ -122,7 +122,7 @@ xdescribe('arrayToObjects', () => {
   })
 })
 
-xdescribe('objectToArray', () => {
+describe('objectToArray', () => {
   it('should convert an object into an array', () => {
     expect(objectToArray({ name: 'Will Smith', dob: '15-09-1968' })).to.be.an('array')
   })

@@ -61,7 +61,7 @@ function sumArray(array) {
   }, 0)
 }
 
-// .replace(/,/g,'')
+// in your sumArray( ) function you needed to parseInt both the arguments of the reduce method - so you were very close to getting the solution right!
 
 // write a function that frames a string in asterisks (*)
 //                             ***************
@@ -109,7 +109,7 @@ function secondLowestSecondHighest(array) {
 // eg: mergeUnique([9,8,8,9], [7,8,8,7]) => [9,8,7]
 function mergeUnique(arr1, arr2) {
   const mergedArray = arr1.concat(arr2)
-  const uniqueArray =[...new Set(mergedArray)]
+  const uniqueArray = [...new Set(mergedArray)]
   return uniqueArray
 }
 
@@ -117,15 +117,36 @@ function mergeUnique(arr1, arr2) {
 // write a function that converts an array of strings into an array of objects, with the supplied key
 // eg: arrayToObjects(["Mike", "Emily"], "name") => [{ name: "Mike" }, { name: "Emily"}]
 function arrayToObjects(array, key) {
-  const newObject = Object.assign(array, key)
-  return newObject
-}
+  return array.map((string) => {
+    const object = {}
+    object[key] = string
+    return object
+  })
+}// function arrayToObjects(array, key) {
+//   const arrayToObjects = []
+//   array.forEach( item => arrayToObjects.push({ [key]: item }))
+//   return arrayToObjects
+// }
+
+
 
 // write a function to convert an object into an array of arrays containing key and value
 // eg: objectToArray({ name: 'Will Smith', dob: '15-09-1968' }) => [['name', 'Will Smith'], ['dob', '15-09-1968']];
 function objectToArray(object) {
-
+  const keys = Object.keys(object)
+  // console.log(typeof keys)
+  return keys.map(key => {
+    return [key, object[key]] 
+  })
 }
+
+// function objectToArray(object) {
+//   const objectToArray = []
+//   for (const key in object){
+//     objectToArray.push([key, object[key]])
+//   }
+//   return objectToArray
+// }
 
 // write a function to return the number of occurances of each letter of a string in an object case insensitive
 // eg. numOfOccurances('This is great') => { t: 2, h: 1, i: 2, s: 2, g: 1, r: 1, e: 1, a: 1 }
