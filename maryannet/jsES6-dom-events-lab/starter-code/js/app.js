@@ -2,16 +2,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Task 5
 
-  // const heading = document.getElementsByTagName('h1')
-  // const scrollSetting = window.style.scrollY
+  const heading = document.querySelector('h1')
 
-  // window.addEventListener('scroll', e => {
-  //   if (scrollSetting >= 40) {
-  //     heading.classList.add('fadeOutUp')
-  //   } else if (scrollSetting < 40) {
-  //     heading.classList.remove('fadeOutUp')
-  //   }
-  // })
+  window.addEventListener('scroll', e => {
+    if (window.scrollY >= 40) {
+      heading.classList.add('fadeOutUp')
+    } else {
+      heading.classList.remove('fadeOutUp')
+    }
+  })
 
   // Commented out because it breaks the rest of the code
 
@@ -34,43 +33,55 @@ window.addEventListener('DOMContentLoaded', () => {
     choice.textContent = `${e.target.value}`
   })
 
+  // dropdown.addEventListener('change', e => {
+  //   const selectedOption = event.target.value
+  //   const choice = document.querySelector('#city')
+  //   selectedOption = choice.textContent // Nick used innerHTML
+  // })
+  // event.target.value - tells us what was actually selected
+
   // Task 3 
 
-  const name = document.querySelectorAll('.name')
-  // console.log(name)
+  const nameElements = document.querySelectorAll('.name')
+  const current = document.querySelector('#current')
 
-  // const trial = name.map(() => {
-  //   name.addEventListener('mouseover', e => {
+  nameElements.forEach(elem => {
+    elem.addEventListener('mouseover', elem => {
+      current.innerHTML = elem.textContent
+    })
+  })
+
+  nameElements.forEach(element => {
+    element.addEventListener('mouseover', element => {
+      current.innerHTML = ''
+    })
+  })
+
+
+  // for (let i = 0; i < name.length; i++) {
+  //   name[i].addEventListener('mouseover', e => {
   //     const current = document.querySelector('#current')
-  //     current.textContent = name
+  //     current.textContent = `${e.target.value}`
   //   })
-  //   return trial
-  // })
+  // }
 
-  for (let i = 0; i < name.length; i++) {
-    name[i].addEventListener('mouseover', e => {
-      const current = document.querySelector('#current')
-      current.textContent = `${e.target.value}`
-    })
-  }
-
-  for (let j = 0; j < name.length; j++) {
-    name[j].addEventListener('mouseout', e => {
-      const current = document.querySelector('#current')
-      current.textContent = ' '
-    })
-  }
+  // for (let j = 0; j < name.length; j++) {
+  //   name[j].addEventListener('mouseout', e => {
+  //     const current = document.querySelector('#current')
+  //     current.textContent = ' '
+  //   })
+  // }
   
   // Task 4
 
-  const submit = document.querySelector('#subscribe')
+  const formElement = document.querySelector('#subscribe')
+  const subButton = document.querySelector('button.submit')
 
-  submit.addEventListener('submit', e => {
+  formElement.addEventListener('submit', e => {
     e.preventDefault()
-    submit.classList.add('submitted')
-    submit.innerHTML = 'Submitted!'
+    subButton.classList.add('submitted')
+    subButton.innerHTML = 'Submitted!'
   })
 
   
 })
-
