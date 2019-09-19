@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1428765048792-aa4bdde46fea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+  background-color: antiquewhite;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+div.total-wrapper {
+  width: 50vw;
+  height: 50vh;
+  margin: auto auto;
+}
+
+div.thermometer-target-wrapper {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+div.thermometer {
+  border: 3px black solid;
+  align-self: center;
+  height: 60px;
+  width: 400px;
+  border-radius: 50px;
+  z-index: 2;
+  
+}
+
+div.fillMe {
+  width: 0%; 
+  height: 100%; 
+  background-color: #d8ebff;
+  border-radius: 50px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+div.thermometer-wrapper {
+  text-align: center;
+  display: flex;
+  margin: 15px;
+}
+
+div.currentTotal {
+ 
+}
+
+div.target {
+  border: 5px black solid;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+div.target h2 {
+  font-size: 50px;
+  align-self: center;
+  margin: 10px;
+}
+
+div.target p {
+  font-size: 50px; 
+  align-self: center;
+  margin: 10px;
+}
+
+div.leftToRaise {
+  text-align: center;
+  font-size: 30px;
+  color: #59acff;
+}
+
+
+div.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 1000%;
+}
+
+div.buttons div {
+  background-color: #d8ebff;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+  opacity: 0.7;
+  border-radius: 10px;
+  margin: 10px, 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.buttons div:hover {
+  background: #59acff;
+  letter-spacing: 4px;
+  -webkit-box-shadow: 0px 5px 40px -10px #0d86ff;
+  -moz-box-shadow: 0px 5px 40px -10px #0d86ff;
+  box-shadow: 5px 40px -10px #0d86ff;
+  transition: all 0.6s ease 0s;
+  }
+}

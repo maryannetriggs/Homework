@@ -1,9 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-  // Getting computer input - generating random number
+  // Getting computer input - generating random number and turning random number into a choice
   let computerChoice = Math.floor(Math.random() * 3)
 
-  // Getting computer input - turning random number into a choice
   if (computerChoice === 0) {
     computerChoice = 'Rock'
   } else if (computerChoice === 1) {
@@ -18,54 +17,24 @@ window.addEventListener('DOMContentLoaded', () => {
   const computerInput = document.querySelector('#computerChoice')
   const winner = document.querySelector('#winner')
 
-  // Console log statements
-  // console.log(computerChoice)
-  // console.log(userInput)
-  // console.log(userChoice)
-  // console.log(winnerx())
+  // Function to determine winner
+  function whoWon(userInput, computerChoice) {
+    if (userInput === computerChoice) {
+      return 'The game is a tie'
+    } else if (userInput === 'Rock' && computerChoice === 'Paper' || userInput === 'Paper' && computerChoice === 'Scissors' || userInput === 'Scissors' && computerChoice === 'Rock') {
+      return 'The computer wins'
+    } else {
+      return 'The user wins'
+    }
+  }
 
-  // DOM statements and comparing user to computer input then determining a winner
-  userInput.forEach((elem, index) => {
+  // DOM statements when user clicks on a button
+  userInput.forEach(elem => {
     elem.addEventListener('click', () => {
       userChoice.innerHTML = elem.textContent
       computerInput.innerHTML = computerChoice
-      const userAnswer = elem.textContent
-
-      console.log(userChoice)
-
-      function winnerx(userAnswer, computerChoice) {
-        if (userAnswer === computerChoice) {
-          return 'The game is a tie'
-        } else if (userAnswer === 'Rock') {
-          if (computerChoice === 1) {
-            return 'The computer wins'
-          } else if (computerChoice === 2) {
-            return 'The user wins'
-          }
-        } else if (userAnswer === 'Paper') {
-          if (computerChoice === 0) {
-            return 'The user wins'
-          } else if (computerChoice === 2) {
-            return 'The computer wins'
-          }
-        } else if (userAnswer === 'Scissors') {
-          if (computerChoice === 0) {
-            return 'The computer wins'
-          } else if (computerChoice === 1) {
-            return 'The user wins'
-          }
-        }
-      }
-
-      winner.innerHTML = winnerx(userAnswer, computerChoice)
-
+      winner.innerHTML = whoWon(userInput, computerChoice)
     })
   })
-
-
-
-
-
-
 
 })
