@@ -28,13 +28,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // DOM statements when user clicks on a button
-  userInput.forEach(elem => {
-    elem.addEventListener('click', () => {
-      userChoice.innerHTML = elem.textContent
+  // DOM statements for when user clicks on a button
+  userInput.forEach(gameOutcome => {
+
+    gameOutcome.addEventListener('click', () => {
+
+      const userAnswer = gameOutcome.textContent
+
+      userChoice.innerHTML = gameOutcome.textContent
       computerInput.innerHTML = computerChoice
-      winner.innerHTML = whoWon(userInput, computerChoice)
+      winner.innerHTML = whoWon(userAnswer, computerChoice)
     })
+    
   })
 
 })
