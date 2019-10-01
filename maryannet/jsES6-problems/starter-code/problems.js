@@ -167,7 +167,12 @@ function eggsBreakie(array) {
 // itemsCount(5, [ 1, 4 ,'hello' ], true) => 5
 // note that result is not 3, as the function should count 5, 1, 4, 'hello' and true as 5 separate items regardless of some of them being in an array.
 function itemsCount(a, b, c) {
-
+  let count = []
+  for (let i = 0; i < itemsCount.length; i++) {
+    i + 4
+    count.push(i)
+  }
+  console.log(count)
 }
 
 // write a function which returns the number of days between two dates (as strings with format YYYY-MM-DD)
@@ -184,7 +189,7 @@ function daysBetween(date1, date2) {
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 etc...
 // eg: fibonacci(4) => [0,1,1,2]; fibonacci(8) => [0, 1, 1, 2, 3, 5, 8, 13];
 function fibonacci(n) {
-
+ 
 }
 
 // write a function that will convert a price into coins needed to make up that price

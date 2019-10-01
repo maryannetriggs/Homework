@@ -156,7 +156,7 @@ describe('eggsBreakie', () => {
   })
 })
 
-xdescribe('itemsCount', () => {
+describe('itemsCount', () => {
   it('should be a number', () => {
     expect(itemsCount(5, [1, 4, 'hello'], true)).to.be.a('number')
   })
