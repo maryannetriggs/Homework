@@ -1,0 +1,49 @@
+$whiteColour: white;
+
+* {
+  box-sizing: border-box;
+  font-family: 'London Tube', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  color: $whiteColour;
+  font-size: 40px;
+}
+
+.tubeWrapper {
+  background-color: $whiteColour;
+  border-radius: 6px;
+  
+  width: 30vw;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  div {
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+h3, p {
+  color: dimgray;
+  padding: 0 20px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-top: 5px;
+  font-size: 18px;
+}
