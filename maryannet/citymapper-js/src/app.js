@@ -18,7 +18,7 @@ getTubes()
 setInterval(() => {
   console.log('updated')
   getTubes()
-}, 10000)
+}, 3000000)
 
 
 function displayTubes() {
