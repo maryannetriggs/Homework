@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// import '../../style.scss'
+
 const WineCard = ({ name, image, price, user, _id }) => (
   <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
     <Link to={`/wines/${_id}`}>
       <div className="card">
         <div className="card-header">
-          <h4 className="card-header-title">{name}</h4>
+          <h3 className="card-header-title">{name}</h3>
         </div>
         <div className="card-image">
           <figure className="image">

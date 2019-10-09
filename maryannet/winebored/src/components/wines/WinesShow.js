@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+// import '../style.scss'
+
 class WinesShow extends React.Component {
   constructor() {
     super()
@@ -28,7 +30,7 @@ class WinesShow extends React.Component {
           <hr />
           <div className="columns">
             <div className="column is-half">
-              <figure className="image">
+              <figure className="image wines-show">
                 <img src={wine.image} alt={wine.name} />
               </figure>
             </div>
