@@ -15,7 +15,7 @@ const WineCard = ({ name, image, price, user, _id }) => (
             <img src={image} alt={name} />
           </figure>
           <div className="card-content">
-            <h5 className="title is-6">{price}</h5>
+            <h5 className="title is-6">£{price}</h5>
             <h6 className="subtitle is-6">{user.username}</h6>
           </div>
         </div>

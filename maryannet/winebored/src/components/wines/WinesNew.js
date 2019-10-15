@@ -1,4 +1,8 @@
 import React from 'react'
+import Axios from 'axios'
+import Auth from '../../lib/Auth'
+
+import WinesForm from '../wines/WinesForm'
 
 class WinesNew extends React.Component {
   constructor() {
@@ -11,10 +15,6 @@ class WinesNew extends React.Component {
         image: '',
         tastingNotes: '',
         grape: '',
-        location: {
-          lat: '',
-          lng: ''
-        },
         abv: '',
         price: ''
       }
@@ -30,128 +30,26 @@ class WinesNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log('clicked')
+    
+    Axios.post('https://winebored.herokuapp.com/wines', this.state.data, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => {
+        this.props.history.push(`/wines/${res.data._id}`)
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
-    console.log(this.state)
     const { data } = this.state
     return (
       <section className="section">
         <div className="container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Name</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="Name"
-                  name="name"
-                  onChange={this.handleChange}
-                  value={data.name}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Origin</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="Origin"
-                  name="origin"
-                  onChange={this.handleChange}
-                  value={data.origin}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Image</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="Image"
-                  name="image"
-                  onChange={this.handleChange}
-                  value={data.image}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Tasting Notes</label>
-              <div className="control">
-                <textarea 
-                  className="textarea"
-                  placeholder="Please enter your tasting notes here..."
-                  name="tastingNotes"
-                  onChange={this.handleChange}
-                  value={data.tastingNotes}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Grape Type</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="Grape Type"
-                  name="grape"
-                  onChange={this.handleChange}
-                  value={data.grape}
-                />
-              </div>
-            </div>
-            <label className="label">Location</label>
-            <div className="field">
-              <label className="label">Longitude</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="longitude"
-                  name="lng"
-                  onChange={this.handleChange}
-                  value={data.lng}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Latitude</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="latitude"
-                  name="lat"
-                  onChange={this.handleChange}
-                  value={data.lat}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Alcohol Percentage</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="abv%"
-                  name="abv"
-                  onChange={this.handleChange}
-                  value={data.abv}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <label className="label">Price</label>
-              <div className="control">
-                <input 
-                  className="input"
-                  placeholder="Price £"
-                  name="price"
-                  onChange={this.handleChange}
-                  value={data.price}
-                />
-              </div>
-            </div>
-            <button type="submit" className="button is-warning is-fullwidth">Add my wine!</button>
-          </form>
-
+          <WinesForm 
+            data={data}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       </section>
     )

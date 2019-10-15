@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 // import '../style.scss'
 
@@ -46,6 +47,10 @@ class WinesShow extends React.Component {
               <hr />
               <h4 className="title is-4">Price</h4>
               <p><strong>£{wine.price}</strong></p>
+              <hr />
+              <Link to={`/wines/${wine._id}/edit`} className="button is-warning">
+                Edit
+              </Link>
             </div>
           </div>
         </div>

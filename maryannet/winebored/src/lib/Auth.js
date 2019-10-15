@@ -1,6 +1,6 @@
 class Auth {
   static setToken(token) {
-    localStorage.setToken('token', token)
+    localStorage.setItem('token', token)
   }
   static getToken() {
     return localStorage.getItem('token')

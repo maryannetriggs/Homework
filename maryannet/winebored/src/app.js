@@ -7,6 +7,7 @@ import Home from './components/common/Home'
 import WinesIndex from './components/wines/WinesIndex'
 import WinesShow from './components/wines/WinesShow'
 import WinesNew from './components/wines/WinesNew'
+import WinesEdit from './components/wines/WinesEdit'
 
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
@@ -28,6 +29,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/wines/new" component={WinesNew}></Route>
+        <Route path="wines/:id/edit" component={WinesEdit}></Route>
         <Route path="/wines/:id" component={WinesShow}></Route>
         <Route exact path="/wines" component={WinesIndex}></Route>
         <Route path="/register" component={Register}></Route>

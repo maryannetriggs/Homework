@@ -10,7 +10,7 @@ class Register extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
@@ -18,20 +18,19 @@ class Register extends React.Component {
     this.setState({ data })
   }
 
-  handleClick(e) {
+  handleSubmit(e) {
     e.preventDefault()
 
     axios.post('https://winebored.herokuapp.com/register', this.state.data)
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push('/login'))
       .catch(err => console.log(err))
   }
 
   render() {
-    console.log('rendered', this.state, this.props)
     return (
       <section className="section">
         <div className="container">
-          <form onChange={this.handleChange}>
+          <form onSubmit={this.handleSubmit}>
             <h2 className="title">Register</h2>
             <div className="field">
               <label className="label">Username</label>
@@ -40,6 +39,7 @@ class Register extends React.Component {
                   className="input"
                   name="username"
                   placeholder="Username"
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
@@ -50,6 +50,7 @@ class Register extends React.Component {
                   className="input"
                   name="email"
                   placeholder="Email"
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
@@ -61,6 +62,7 @@ class Register extends React.Component {
                   name="password"
                   placeholder="Password"
                   type="password"
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
@@ -72,10 +74,11 @@ class Register extends React.Component {
                   name="passwordConfirmation"
                   placeholder="Password Confirmation"
                   type="password"
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
-            <button onClick={this.handleClick} type="submit" className="button is-info is-fullwidth">Register</button>
+            <button onSubmit={this.handleSubmit} type="submit" className="button is-info is-fullwidth">Register</button>
           </form>
         </div>
       </section>
