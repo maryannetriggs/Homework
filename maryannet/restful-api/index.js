@@ -20,8 +20,9 @@ app.listen(port, () => console.log(`All systems are go on port: ${port}`))
 // Insomnia Template
 // {
 // 	"name": "required",
-//   "gender": "required",
+//   "gender": enum: ['male', 'female'],
 //   "firstIssue": 1000,
 //   "pets": ['not required', 'not required'],
-//   "traits": ['not required', 'not required']
+//   "traits": ['required', 'required'],
+//   "image": "not required",
 // }

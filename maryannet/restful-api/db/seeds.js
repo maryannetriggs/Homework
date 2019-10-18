@@ -1,6 +1,7 @@
 const Character = require('../models/Character')
 const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
+const User = require('../models/User')
 
 mongoose.connect(dbURI, 
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
@@ -8,67 +9,92 @@ mongoose.connect(dbURI,
     if (err) return console.log(err)
     db.dropDatabase()
       .then(() => {
+        return User.create([
+          {
+            username: 'mat',
+            email: 'mat@email',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          },
+          {
+            username: 'mark',
+            email: 'mark@email',
+            password: 'pass',
+            passwordConfirmation: 'pass'
+          }
+        ])
+      })
+      .then(users => {
         return Character.create([
           {
             name: 'Dennis the Menace',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 452,
             pets: ['Gnasher', 'Gnipper', 'Rasher', 'Dasher'],
-            traits: ['Greedy', 'Heroic', 'Inventive']
+            traits: ['Greedy', 'Heroic', 'Inventive'],
+            user: users[0]
           },
           {
             name: 'Minnie the Minx',
-            gender: 'Female',
+            gender: 'female',
             firstIssue: 596,
             pets: ['Chester'],
-            traits: ['Mischievious', 'Hyperactive', 'Inventive']
+            traits: ['Mischievious', 'Hyperactive', 'Inventive'],
+            user: users[1]
           },
           {
             name: 'Roger the Dodger',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 561,
             pets: ['Joe the Crow', 'Dodge Cat'],
-            traits: ['Crafty', 'Smartly Dressed']
+            traits: ['Crafty', 'Smartly Dressed'],
+            user: users[0]
           },
           {
             name: 'Billy Whizz',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 1139,
-            traits: ['Impatient', 'Fast']
+            traits: ['Impatient', 'Fast'],
+            user: users[1]
           },
           {
             name: 'Bananaman',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 3618,
             pets: ['Crow'],
-            traits: ['Stupid', 'Strong', 'Naive']
+            traits: ['Stupid', 'Strong', 'Naive'],
+            user: users[0]
           },
           {
             name: 'Ivy the Terrible',
-            gender: 'Female',
+            gender: 'female',
             firstIssue: 2233,
-            traits: ['Strong', 'Determined', 'Malicious']
+            traits: ['Strong', 'Determined', 'Malicious'],
+            user: users[1]
           },
           {
             name: 'Les Pretend',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 2493,
             pets: ['Chester'],
-            traits: ['Imaginative', 'Funny']
+            traits: ['Imaginative', 'Funny'],
+            user: users[0]
           },
           {
             name: 'Walter the Softy',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 577,
             pets: ['Foo Foo'],
-            traits: ['Intelligent', 'Calm', 'Spoilt']
+            traits: ['Intelligent', 'Calm', 'Spoilt'],
+            user: users[1]
           },
           {
             name: 'Little Plum',
-            gender: 'Male',
+            gender: 'male',
             firstIssue: 586,
             pets: ['Treaclefoot'],
-            traits: ['Cheeky', 'Cute']
+            traits: ['Cheeky', 'Cute'],
+            user: users[0]
           }
         ]
         )
