@@ -19,4 +19,6 @@ const characterSchema = new mongoose.Schema({
   comments: { type: [commentsSchema] }
 })
 
+characterSchema.plugin(require('mongoose-unique-validator'))
+
 module.exports = mongoose.model('Character', characterSchema)

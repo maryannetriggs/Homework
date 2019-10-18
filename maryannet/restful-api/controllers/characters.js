@@ -10,12 +10,12 @@ function index(req, res) {
 }
 
 // Create route 
-function create(req, res) {
+function create(req, res, next) {
   req.body.user = req.currentUser
   Character 
     .create(req.body)
     .then(character => res.status(201).json(character))
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 // Show route 
@@ -31,7 +31,7 @@ function show(req, res) {
 }
 
 // Edit route
-function update(req, res) {
+function update(req, res, next) {
   Character
     .findById(req.params.id)
     .then(character => {
@@ -40,7 +40,7 @@ function update(req, res) {
     })
     .then(character => character.save())
     .then(character => res.status(202).json(character))
-    .catch(err => res.status(422).json(err))
+    .catch(next)
 }
 
 // Delete route
@@ -54,7 +54,7 @@ function remove(req, res) {
 
 // Create comment
 
-function createComment(req, res) {
+function createComment(req, res, next) {
   req.body.user = req.currentUser
   Character
     .findById(req.params.id)
@@ -66,7 +66,7 @@ function createComment(req, res) {
       return character.save()
     })
     .then(character => res.status(201).json(character))
-    .catch(err => res.json(err))
+    .catch(next)
 }
 
 function removeComment(req, res) {
