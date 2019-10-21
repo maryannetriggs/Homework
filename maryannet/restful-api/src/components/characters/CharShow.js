@@ -27,7 +27,7 @@ class CharShow extends React.Component {
             <h2>{char.name}</h2>
             <h4>First appeared in issue: <strong>{char.firstIssue}</strong></h4>
             <>
-              { char.pets.length >= 1
+              { char.pets.length > 0
                 ? 
                   <>
                     <h3>Pets</h3> 
