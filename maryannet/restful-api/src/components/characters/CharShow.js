@@ -6,7 +6,7 @@ class CharShow extends React.Component {
     super()
 
     this.state = {
-      char: []
+      char: null
     }
   }
 
@@ -19,17 +19,31 @@ class CharShow extends React.Component {
 
   render() {
     const { char } = this.state
-    console.log(this.state)
+    if (!char) return null
     return (
       <div className="charWrapper">
         <div className="charItem">
           <div className="charText">
             <h2>{char.name}</h2>
             <h4>First appeared in issue: <strong>{char.firstIssue}</strong></h4>
-            <h3>Pets</h3>
-            <h4>{char.pets}</h4>
+            <>
+              { char.pets.length >= 1
+                ? 
+                  <>
+                    <h3>Pets</h3> 
+                    {char.pets.map((pet, i) => (
+                      <h4 key={i}>{pet} </h4>
+                    ))}
+                  </>
+                : ''
+              }
+            </>
             <h3>Character Traits</h3>
-            <h4>{char.traits}</h4>
+            <>
+              {char.traits.map((trait, i) => (
+                <h4 key={i}>{trait} </h4>
+              ))}
+            </>
           </div>
           <div className="charImg">
             <img src={char.image} />
@@ -39,5 +53,6 @@ class CharShow extends React.Component {
     )
   }
 }
+
 
 export default CharShow
