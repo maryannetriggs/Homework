@@ -1,6 +1,7 @@
 import React from 'react'
-import Axios from 'axios'
-// import axios from 'axios'
+import axios from 'axios'
+
+import CharCard from './CharCard'
 
 class CharIndex extends React.Component {
   constructor() {
@@ -9,23 +10,26 @@ class CharIndex extends React.Component {
     this.state = {
       characters: []
     }
+  }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/api/characters')
-    .then(res => this.setState({ characters: res.data }))
-    .err(err => console.log(err))
+    axios.get('/api/characters')
+      .then(res => this.setState({ characters: res.data }))
+      .catch(err => console.log(err))
   }
 
   render() {
+    console.log(this.state.characters)
     return (
-      <div>
-
+      <div className="comicStripImg">
+        {this.state.characters.map(char => (
+          <CharCard key={char._id} {...char}/>
+        ))}
       </div>
     )
   }
-  }
-    
-
 }
+
+
 
 export default CharIndex

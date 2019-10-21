@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 
 function register(req, res) {
-
   User
     .create(req.body)
     .then(user => res.status(201).json({ message: `Registration complete! Welcome ${user.username}` }))
@@ -12,7 +11,7 @@ function register(req, res) {
 
 function login(req, res) {
   User
-    .findOne({ email: req.body.email })
+    .findOne({ username: req.body.username })
     .then(user => {
       if (!user || !user.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Unauthorised' })

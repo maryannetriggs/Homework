@@ -32,6 +32,7 @@ mongoose.connect(dbURI,
             firstIssue: 452,
             pets: ['Gnasher', 'Gnipper', 'Rasher', 'Dasher'],
             traits: ['Greedy', 'Heroic', 'Inventive'],
+            image: '/images/dennis-the-menace.jpg',
             user: users[0]
           },
           {
@@ -40,6 +41,7 @@ mongoose.connect(dbURI,
             firstIssue: 596,
             pets: ['Chester'],
             traits: ['Mischievious', 'Hyperactive', 'Inventive'],
+            image: '/images/minnie-the-minx.jpg',
             user: users[1]
           },
           {
@@ -48,6 +50,7 @@ mongoose.connect(dbURI,
             firstIssue: 561,
             pets: ['Joe the Crow', 'Dodge Cat'],
             traits: ['Crafty', 'Smartly Dressed'],
+            image: '/images/roger-the-dodger.jpg',
             user: users[0]
           },
           {
@@ -55,6 +58,7 @@ mongoose.connect(dbURI,
             gender: 'male',
             firstIssue: 1139,
             traits: ['Impatient', 'Fast'],
+            image: '/images/billy-whizz.jpeg',
             user: users[1]
           },
           {
@@ -63,6 +67,7 @@ mongoose.connect(dbURI,
             firstIssue: 3618,
             pets: ['Crow'],
             traits: ['Stupid', 'Strong', 'Naive'],
+            image: '/images/bananaman.jpeg',
             user: users[0]
           },
           {
@@ -70,6 +75,7 @@ mongoose.connect(dbURI,
             gender: 'female',
             firstIssue: 2233,
             traits: ['Strong', 'Determined', 'Malicious'],
+            image: '/images/ivy-the-terrible.jpg',
             user: users[1]
           },
           {
@@ -78,6 +84,7 @@ mongoose.connect(dbURI,
             firstIssue: 2493,
             pets: ['Chester'],
             traits: ['Imaginative', 'Funny'],
+            image: 'images/les-pretend.jpg',
             user: users[0]
           },
           {
@@ -86,6 +93,7 @@ mongoose.connect(dbURI,
             firstIssue: 577,
             pets: ['Foo Foo'],
             traits: ['Intelligent', 'Calm', 'Spoilt'],
+            image: 'images/walter-the-softy.jpeg',
             user: users[1]
           },
           {
@@ -94,6 +102,7 @@ mongoose.connect(dbURI,
             firstIssue: 586,
             pets: ['Treaclefoot'],
             traits: ['Cheeky', 'Cute'],
+            image: 'images/little-plum.jpeg',
             user: users[0]
           }
         ]

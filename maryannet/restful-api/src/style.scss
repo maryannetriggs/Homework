@@ -1,1 +1,64 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+nav {
+  height: 80px;
+  background-color: #ffe300;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    color: black;
+    font-size: 25px;
+  }
+  a:hover {
+    border-bottom: black 4px solid;
+  }
+}
+
+.comicStripImg {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  img {
+    height: 300px;
+    border: black solid 3px;
+    margin: 10px;
+  }
+}
+
+.charWrapper {
+  margin: 20px auto 0 auto;
+  max-width: 80%;
+  .charItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+    .charText {
+      flex-grow: 1;
+      h2 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      h4 {
+        font-size: 20px;
+      }
+    }
+    .charImg {
+      flex-grow: 1;
+      img {
+        height: 500px;
+      }
+  }
+}

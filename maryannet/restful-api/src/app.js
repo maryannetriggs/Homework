@@ -1,32 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import axios from 'axios'
+import './style.scss'
+import 'bulma'
 
 import Home from './components/common/Home'
-import CharIndex from './components/characters/CharIndex'
+import Header from './components/common/Header'
 
-axios.get('/api/characters')
-  .then(res => console.log(res.data))
-  .catch(err => console.log(err))
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+
+import CharIndex from './components/characters/CharIndex'
+import CharShow from './components/characters/CharShow'
 
 const App = () => (
   <BrowserRouter>
     <>
-      <nav>
-        <Link to="/">Home Page</Link>
-        <Link to="/characters">Index Page</Link>
-      </nav>
+      <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/characters" component={CharIndex} />
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/characters/:id" component={CharShow}></Route>
+        <Route path="/characters" component={CharIndex}></Route>
+        <Route path="/register" component={Register}></Route>
+        <Route path="/login" component={Login}></Route>
       </Switch>
     </>
 
   </BrowserRouter>
 )
-
 
 ReactDOM.render(
   <App />,
