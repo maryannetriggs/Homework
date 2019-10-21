@@ -1,11 +1,12 @@
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
+// Overall Styles
+* {
+  box-sizing: border-box; 
 }
 
+// Navbar Styles
 nav {
   height: 80px;
-  background-color: #ffe300;
+  background-color: #f9dd28;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -16,8 +17,23 @@ nav {
   a:hover {
     border-bottom: black 4px solid;
   }
+  .imageWrapper {
+    display: flex;
+    justify-content: center;
+    img {
+      // background-color: #ffe300;
+    }
+  }
 }
 
+// Homepage Styles
+.homePage {
+  background-color: #f9dd28;
+  font-size: 60px;
+  text-align: center;
+}
+
+// Index Styles
 .comicStripImg {
   margin-top: 20px;
   display: flex;
@@ -35,6 +51,7 @@ nav {
   }
 }
 
+// Show Page Styles
 .charWrapper {
   margin: 20px auto 0 auto;
   max-width: 80%;
@@ -60,5 +77,5 @@ nav {
       img {
         height: 500px;
       }
-  }
+    }
 }

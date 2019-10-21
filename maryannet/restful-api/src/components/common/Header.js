@@ -9,8 +9,9 @@ const Header = () => (
       <Link to="/register">Register</Link>
       <Link to="/login">Log In</Link>
     </nav>
-
-    <img src={'/images/beano-headline.png'} />
+    <div className="imageWrapper">
+      <img src={'/images/dnbanner.jpg'}/>
+    </div>
   </>
 )
 

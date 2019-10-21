@@ -10,7 +10,7 @@ const commentsSchema = new mongoose.Schema({
 
 const characterSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  gender: { type: String, required: true, enum: ['male', 'female'] },
+  gender: { type: String, required: true, enum: ['male', 'female', 'mixed'] },
   firstIssue: { type: Number, required: true, min: 1 },
   pets: { type: [String] },
   traits: { type: [String], required: true },

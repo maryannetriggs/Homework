@@ -3,7 +3,9 @@ import React from 'react'
 
 const Home = () => (
   <>
-    <h1>Home Page</h1>
+    <div className="homePage">
+      <h1>Beanopedia - where Beano characters come to life!</h1>
+    </div>
   </>
 )
 

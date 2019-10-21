@@ -104,6 +104,24 @@ mongoose.connect(dbURI,
             traits: ['Cheeky', 'Cute'],
             image: 'images/little-plum.jpeg',
             user: users[0]
+          },
+          {
+            name: 'Lord Snooty',
+            gender: 'male',
+            firstIssue: 1,
+            pets: ['Treaclefoot'],
+            traits: ['Posh', 'Conventional'],
+            image: 'images/lord-snooty.jpeg',
+            user: users[1]
+          },
+          {
+            name: 'Bash Street Kids',
+            gender: 'mixed',
+            firstIssue: 604,
+            pets: ['Bash Street Dogs'],
+            traits: ['Rebellious', 'Boisterous'],
+            image: 'images/bash-street-kids.jpeg',
+            user: users[0]
           }
         ]
         )
