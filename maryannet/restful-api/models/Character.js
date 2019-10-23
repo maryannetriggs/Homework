@@ -14,7 +14,7 @@ const characterSchema = new mongoose.Schema({
   firstIssue: { type: Number, required: true, min: 1 },
   pets: { type: [String] },
   traits: { type: [String], required: true },
-  image: { type: String },
+  image: { type: String, required: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: { type: [commentsSchema] }
 })
