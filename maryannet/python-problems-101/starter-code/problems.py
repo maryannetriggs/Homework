@@ -64,3 +64,4 @@ def frame(string):
     ast = '*' * length
     framed = f'{ast}\n* {string} *\n{ast}'
     return framed
+    
